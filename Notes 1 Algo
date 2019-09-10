@@ -1,0 +1,325 @@
+// Structure d"un algorithm
+ALGORITHM nom_de_lalgo
+	<déclaration>
+BEGIN
+	<instructions - le code logique>
+END
+
+char : 'a' <--- juste un criss de patente
+
+// declaration
+ALGORITHM algo_ça_pas_dimportance
+	<declaration de constantes>
+	<declaration de variables>
+BEGIN
+	<instructions - le code logique>
+END
+
+// Constantes - ne change pas au runtime (pendant l'application)
+ALGORITHM algo_ça_pas_dimportance
+	CONSTANTS
+		patate = 10 // integer
+		toto = 10.5 // float
+BEGIN
+END
+
+// Variables - change au runtime (pendant l'application)
+ALGORITHM algo_ça_pas_dimportance
+	VARIABLES
+		INTEGER : patate1, toto2, tata3 // tous des entiers
+		FLOAT : gigi1, gogo2  // tous des chiffres à virgules
+		BOOL : bool1 // des booleans (vrai ou faux)
+		CHAR : char1, charizard // tous des chat (une seule lettre - single quote ex:'a')
+		STRING  : str1, str2 // tous des chaines de caractères (double quote ex: ''allo papa'')
+BEGIN
+	patate1 = 1
+	toto2 = 10
+	tata3 = -57
+	gigi1 = 2.0
+	gogo2 = -99999999.59
+	bool1 = false // ou true
+	char1 = 'a'
+	charizard = '9'
+	str1 = "j'aime pas tant mon prof"
+	str2 = "il m'influence a consommer!"
+END
+
+// Constantes + variables
+ALGORITHM
+	CONSTANTES
+		chien = 5
+		chats = 4
+	VARIABLES
+		BOOL : patate
+		INTEGER : userInput
+BEGIN
+	patate = false
+	userInput = 0
+	WRITE "Nombre de chiens: " + chiens // affiche "nombre de chiens: 5"
+	WRITE "Nombre de chats: " + chats // affiche "Nombre de chats: 4"
+	WRITE "Entrer votre age: "
+	READ userInput // ex: le joueur entre 21
+	Write " L'age du joueur est: " + userInput // affiche "L'age du joueur est: 21"
+END
+
+ALGORITHM algo
+	VARIABLES
+		FLOAT : userInput, userInput2, userInput3, userInput4, userInput5
+		
+BEGIN
+	userInput = 0
+	userInput2 = 0
+	userInput3 = 0
+	userInput4 = 0
+	userInput5 = 0
+	WRITE "Entrer la première note: "
+	READ userInput
+	WRITE "Entrer la deuxième note: "
+	READ userInput2
+	WRITE " Entrer la troisième note: "
+	READ userInput3
+	WRITE " Entrer la quatrième note: "
+	READ userInput4
+	WRITE " Entrer la cinquième note: "
+	READ userInput5
+	WRITE "Votre moyenne est de : " + ((userInput + userInput2 + userInput3 + userInput4 + userInput5) / 5)
+	
+END
+
+ALGORITHM algo_ça_pas_dimportance
+	VARIABLES
+		FLOAT : nbr1, nbr2
+BEGIN
+	nbr1 = 0
+	nbr2 = 0
+	WRITE "Entrer le premier nombre"
+	READ nbr1
+	WRITE "Entrer le premier nombre"
+	READ nbr2
+	WRITE "Somme : " + (nbr1 + nbr2)
+	WRITE "Soustraction : " + (nbr1 - nbr2)
+	WRITE "Division : " + (nbr1 / nbr2)
+	WRITE "Multiplication : " + (nbr1 * nbr2)
+	WRITE "Modulo : " + (nbr1 % nbr2)
+END
+
+ALGORITHM algo_ça_pas_dimportance
+	VARIABLES
+		FLOAT : longueur, largeur
+BEGIN
+	longueur = 0
+	largeur = 0
+	WRITE "Entrer la largeur du rectangle"
+	READ largeur
+	WRITE "Entrer la longueur du rectangle'
+	READ longueur
+	WRITE "l'aire du rectangle est : " + (longueur * largeur)
+END
+
+ALGORITHM algo_ça_pas_dimportance
+	CONSTANTES
+		pi = 3.1416
+	VARIABLES
+		FLOAT : Rayon
+BEGIN
+	WRITE "Entrer le rayon du disque"
+	READ Rayon
+	WRITE "La surface du disque est " + ((pi * (Rayon * Rayon))
+	
+END
+
+ALGORITHM algo_ça_pas_dimportance
+	VARIABLES
+		FLOAT : vecteur1x, vecteur1y, vecteur2x, vecteur2y
+BEGIN
+	WRITE "Entrer la composante x du premier vecteur"
+	READ vecteur1x
+	WRITE "Entrer la composante y du premier vecteur"
+	READ vecteur1y
+	WRITE "Entrer la composante x du deuxième vecteur"
+	READ vecteur2x
+	WRITE "Entrer la composante y du deuxième vecteur"
+	READ vecteur2y
+	WRITE "Le produit scalaire des deux vecteurs est : " + ((vecteur1x * vecteur2x) + (vecteur1y * vecteur2y))
+	
+END
+
+// opérateur NOT (!)
+ALGORITHM example
+	VARIABLES 
+		BOOL : bool1, bool2
+BEGIN
+	bool1 = true 			// assignation de bool1 à vrai
+	bool2 = false 			// assignation de bool2 à faux
+	IF (bool1) THEN
+		WRITE "bool1 est vrai"
+	ELSE 					// si bool1 est faux
+		WRITE "bool1 est faux"
+	ENDIF
+	
+	IF (bool2) THEN
+		WRITE "bool2 est vrai"
+	ELSE
+		WRITE "bool2 est faux" //affiché car bool2 est false
+	ENDIF
+		
+		
+END
+
+// AND
+ALGORITHM example_and
+	VARIABLES
+		BOOL: bool1, bool2
+BEGIN
+	bool1 = false
+	bool2 = false
+	IF (bool1 && bool2) // AND = &&
+		WRITE "a"
+	ENDIF
+	
+	bool1 = true
+	IF (bool1 && bool2) THEN
+		WRITE "b"
+	ENDIF
+	
+	bool2 = true
+	IF (bool1 && bool2) THEN
+		WRITE "c"
+	ENDIF
+	
+	bool1 = false
+	IF (bool1 && bool2) THEN
+		WRITE "d"
+	ENDIF
+	
+	// Resultat de l'algo: c
+	
+END
+
+// OR
+
+ALGORITHM example_or
+	VARIABLES
+		NOOL: bool1, bool2
+BEGIN
+	bool1 = false
+	bool2 = false
+	
+	IF (bool1 OR bool2) THEN // OR = ||
+		WRITE "a"
+	ENDIF
+	
+	bool1 = true
+	IF (bool1 || bool2) THEN
+		WRITE "b"
+	ENDIF
+	
+	bool2 = true
+	IF (bool1 || bool2) THEN
+		WRITE "c"
+	ENDIF
+	
+	bool1 = false
+	IF (bool1 || bool2) then
+		WRITE "d"
+	ENDIF
+	
+	// Résultat : bcd 
+END
+
+// Exercice 6
+ALGORITHM division
+	VARIABLES
+		INTEGER nbr1, nbr2
+BEGIN
+
+	WRITE " Entrer le premier nombre"
+	READ nbr1
+	WRITE "Entrer le deuxième nombre"
+	READ nbr2
+	IF (nbr2 == 0) THEN
+		WRITE "Veuillez entrer un nombre qui n'est pas zéro t'es poche en math"
+		READ nbr2
+	ELSE
+		WRITE "Division: " + (nbr1 / nbr2)
+	ENDIF
+END
+
+// Exercice 7
+ALGORITHM max
+	VARIABLES 
+		INTEGER nbr1, nbr2
+BEGIN
+	WRITE "Entrer le premier nombre"
+	READ nbr1
+	WRITE "Entrer le deuxième nombre"
+	READ nbr2
+	IF (nbr1 == nbr2) THEN
+		WRITE "Equals"
+	ELSE IF (nbr1 > nbr2)
+		WRITE nbr1
+	ELSE 
+		WRITE nbr2
+	ENDIF
+		
+END
+
+// Exercice 8
+ALGORITHM max
+ VARIABLES
+	INTEGER nbr1, nbr2, nbr3
+BEGIN
+	WRITE "Entrer le premier nombre"
+	READ nbr1
+	WRITE "Entrer le deuxième nombre"
+	READ nbr2
+	WRITE "Entrer le troisième nombre"
+	READ nbr3
+	
+	IF (nbr1 == nbr2 && nbr1 == nbr3 && nbr2 == nbr3)	THEN
+		WRITE "Equals"
+	ELSE IF (nbr1 > nbr2 && nbr1 > nbr3) THEN
+		WRITE nbr1
+	ELSE IF (nbr2 > nbr1 && nbr2 > nbr3) THEN
+		WRITE nbr2
+	ELSE IF (nbr3 > nbr1 && nbr3 > nbr2) THEN
+		WRITE nbr3
+	ELSE IF (nbr1 == nbr2 && nbr1 > nbr3) THEN
+		WRITE nbr2 + "et" + nbr1
+	ELSE IF (nbr1 == nbr3 && nbr1 > nbr2)
+		WRITE nbr1 + "et" + nbr3
+	ELSE IF (nbr2 == nbr3 && nbr2 > nbr1)
+		WRITE nbr2 + "et" + nbr3
+	ENDIF
+END
+
+// Exercice 9
+ALGORITHM
+	VARIABLES
+		INTEGER note
+BEGIN
+	note = 0
+	WRITE "Entrer la note : "
+	READ note
+	IF (note < 10) THEN
+		WRITE "Faible"
+	ELSE IF (note >= 10 && note < 12)
+		WRITE "Passable"
+	ELSE IF (note >= 12 && note < 14)
+		WRITE "Presque bien"
+	ELSE IF (note >= 14 && note < 16)
+		WRITE "Bien"
+	ELSE IF (note >= 16 && note < 18)
+		WRITE "Pas mal bien"
+	ELSE IF (note >= 18 && note <= 20)
+		WRITE "Super bien"
+	ELSE IF (note > 20) THEN
+		WRITE "T'es un osti d'cheater sale"
+		READ note
+	ENDIF
+END
+
+
+
+
+
