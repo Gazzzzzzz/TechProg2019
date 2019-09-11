@@ -1,0 +1,41 @@
+public class Retour : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        bool monBool = true; // true : false
+        int monInt = 30; // valeur numerique
+        float monFloat = 30.5f; // valeur float (,)
+        Vector3 monVector = new Vector3();
+
+        monVector.x = 5f;
+        monVector.y = 5f;
+        monVector.z = 5f;
+
+        float x = 5f;
+        float y = 5f;
+        float z = 5f;
+        transform.Translate(monVector);
+        transform.Translate(x, y, z);
+
+        Vector3 newPos = new Vector3();
+        newPos = transform.position; // newPos.x = 0 , newPos.y = 3, newPos.z = 0
+        newPos.y = newPos.y + 1f; // newPos.x = 0, newPos.y = 4, newPos.z = 0
+        transform.position = newPos;
+
+        Vector3 maRotation = new Vector3();
+        maRotation.y = 1f;
+        transform.Rotate(maRotation);
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        Vector3 maRotation1 = new Vector3();
+        maRotation1 = transform.rotation.eulerAngles;
+        maRotation1.y = maRotation1.y + 1f;
+        transform.rotation = Quaternion.Euler(maRotation1);
+    }
